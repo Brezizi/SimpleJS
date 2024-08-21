@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        hitung = () => {
+
+            let panjang = document.getElementById('panjang').value;
+            let lebar = document.getElementById('lebar').value;
+            let rumus = panjang * lebar;
+
+            //menentukan nilai berdasarkan rumus
+            document.getElementById('rumus').value = rumus;
+        }
+    </script>
+<body class="my-52 flex justify-center">
+    <div class="w-96 rounded-xl shadow-xl overflow-hidden border transform transition duration-500 hover:scale-110">
+        <h1 class=" px-[28px] py-[28px] bg-red-600 flex justify-center text-white font-bold text-2xl shadow-lg">Kalkulator Luas Persegi Panjang</h1>
+        <div class="px-5 pt-2 pb-6 space-y-6">
+            <div class="flex space-x-6">
+                <div>
+                    <span class="block font-bold text-gray-700 my-2">Panjang</span>
+                    <input type="number" id="panjang" class="text-sm w-full p-3 rounded-md shadow-md bg-white border ring-1 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:transition delay-5s">
+                </div>
+                <div class="">
+                    <span class="block font-bold text-gray-700 my-2">Lebar</span>
+                    <input type="number" id="lebar" class="text-sm w-full p-3 rounded-md shadow-md bg-white border ring-1 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:transition delay-5s" >
+                </div>
+            </div>
+            <button class="block w-full font-semibold  bg-red-600 text-white p-3 rounded-lg hover:bg-red-800 hover:transition delay-5s active:bg-red-900 active:transition delay-5s" id="hasil" onclick="hitung()">Hitung</button>
+            <div class="">
+                <span class="block font-bold text-gray-700 mb-2">Hasil:</span>
+                <input type="number" id="rumus" class="text-sm w-full p-3 rounded-md border" disabled>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
