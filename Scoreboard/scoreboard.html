@@ -2,39 +2,55 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scoreboard Volley</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Scoreboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="system.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-        rel="stylesheet">
 </head>
+
 <body class="my-52 flex justify-center font-[Inter]">
-    <div class="inline-block w-128 min-w-128 max-w-128 rounded-xl shadow-xl overflow-hidden border transform transition duration-500 hover:scale-110">
-        <h1 class="px-[28px] py-[28px] bg-red-600 flex justify-center text-white font-bold text-2xl shadow-lg">Scoreboard Volley Ball</h1>
-        <div class="p-5">
+    <div
+        class="inline-block min-w-[525px] max-w-[525px] rounded-xl shadow-xl overflow-hidden border transform transition duration-500 hover:scale-110">
+        <h1 class="px-[28px] py-[28px] bg-red-600 flex justify-center text-white font-bold text-2xl shadow-lg">
+            Volleyball Scoreboard</h1>
+        <div class="p-5 w-full">
             <div class="flex space-x-6 mb-[18px]">
                 <input id="nameA" type="text" placeholder="Enter Team A Name"
                     class="text-sm w-full p-3 rounded-md shadow-md bg-white border ring-1 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:transition delay-5s" />
                 <input id="nameB" type="text" placeholder="Enter Team B Name"
                     class="text-sm w-full p-3 rounded-md shadow-md bg-white border ring-1 focus:outline-none focus:ring-sky-500 focus:border-sky-500 focus:transition delay-5s" />
             </div>
-            <button id="srt-button" onclick="startGame()" class="block w-full font-semibold  bg-red-600 text-white p-2 rounded-lg hover:bg-red-800 hover:transition delay-5s active:bg-red-900 active:transition delay-5s">Start Game</button>
-            <h1 id="gameStatus" class="text-xl font-bold text-center my-4"></h1>
+            <button id="srt-button" onclick="startGame()"
+                class="block w-full font-semibold  bg-red-600 text-white p-3 rounded-lg hover:bg-red-800 hover:transition delay-5s active:bg-red-900 active:transition delay-5s">Start
+                Game</button>
+            <h1 id="gameStatus" class="text-2xl font-bold text-center my-4"></h1>
             <div class="flex space-x-8 justify-items-center">
                 <div class="w-full p-5 space-y-8">
                     <h1 id="displayNameA" class="text-2xl font-semibold flex justify-center">Team A</h1>
                     <h1 id="scoreA" class="py-8 px-10 text-2xl bg-gray-100 border rounded-md text-center">0</h1>
-                    <button class="block w-full font-semibold  bg-sky-600 text-white p-2 rounded-lg hover:bg-sky-800 hover:transition delay-5s active:bg-sky-900 active:transition delay-5s" onclick="addScore('teamA')">+</button>
+                    <h2 id="setA" class="text-2xl font-semibold text-center my-4">Sets Won: 0</h2>
+                    <div class="flex space-x-2">
+                        <button
+                            class="block w-full font-semibold  bg-sky-600 text-white p-2 rounded-lg hover:bg-sky-800 hover:transition delay-5s active:bg-sky-900 active:transition delay-5s"
+                            onclick="editScore('teamA', '+')">+</button>
+                        <button
+                            class="block w-full font-semibold  bg-red-600 text-white p-2 rounded-lg hover:bg-red-800 hover:transition delay-5s active:bg-red-900 active:transition delay-5s"
+                            onclick="editScore('teamA', '-')">-</button>
+                    </div>
                 </div>
                 <div class="w-full p-5 space-y-8">
                     <h1 id="displayNameB" class="text-2xl font-semibold flex justify-center">Team B</h1>
                     <h1 id="scoreB" class="py-8 px-10 text-2xl bg-gray-100 border rounded-md text-center">0</h1>
-                    <button class="block w-full font-semibold  bg-sky-600 text-white p-2 rounded-lg hover:bg-sky-800 hover:transition delay-5s active:bg-sky-900 active:transition delay-5s" onclick="addScore('teamB')">+</button>
+                    <h2 id="setB" class="text-2xl font-semibold text-center my-4">Sets Won: 0</h2>
+                    <div class="flex space-x-2">
+                        <button
+                            class="block w-full font-semibold  bg-sky-600 text-white p-2 rounded-lg hover:bg-sky-800 hover:transition delay-5s active:bg-sky-900 active:transition delay-5s"
+                            onclick="editScore('teamB', '+')">+</button>
+                        <button
+                            class="block w-full font-semibold  bg-red-600 text-white p-2 rounded-lg hover:bg-red-800 hover:transition delay-5s active:bg-red-900 active:transition delay-5s"
+                            onclick="editScore('teamB', '-')">-</button>
+                    </div>
                 </div>
             </div>
         </div>
